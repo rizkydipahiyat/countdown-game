@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Countdown</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				font-family: "Noto Sans Mono", monospace;
+				cursor: pointer;
+			}
+			.container {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			h1 {
+				font-size: 15em;
+				color: #969696;
+			}
+			p {
+				font-size: 5em;
+				text-align: center;
+				color: #969696;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 id="count"></h1>
+			<p></p>
+		</div>
+		<script type="text/javascript">
+			var counter = 10;
+			var play = document.querySelector("p");
+			id = document.getElementById("count");
+			play.innerText = "Play";
+			play.addEventListener("click", function () {
+				play.innerText = "";
+				setInterval(function () {
+					counter--;
+					if (counter >= 0) {
+						id.innerHTML = counter;
+					}
+					if (counter === 0) {
+						id.innerText = "";
+					}
+				}, 1000);
+			});
+		</script>
+	</body>
+</html>
